@@ -1,0 +1,283 @@
+
+#index{
+    height: 100vh;
+    min-height: 630px;
+    background-image: url("images/index/bg.jpg");
+    background-position: center 76%;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+    &.logoIn {
+        .logo-wrapper {
+             opacity: 1;
+            .logo{
+                filter: blur(0px);
+                transform: scale(1);
+            }
+        }
+    }
+    &.textIn {
+        .logo-wrapper .text {
+            opacity: 1;
+            transform: none;
+        }
+    }
+    &.logoUp {
+        .logo-wrapper{
+            top: 26.5%;
+            .logo {
+                transform: scale(0.48);
+            }
+
+            .text {
+                opacity: 0;
+            }
+        }
+
+    }
+    &.houseIn{
+        .house{
+            opacity: 1;
+            transition:opacity 1s;
+        }
+    }
+    &.menuIn{
+        .menu-wrapper{
+            top: 50%;
+            opacity: 1;
+            pointer-events: all;
+             transition: opacity 1s,
+             top 1s;
+        }
+        .house{
+            opacity: 0.2;
+        }
+    }
+    .logo-wrapper{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        transition: top 1s;
+        opacity: 0;
+        width: 100%;
+        pointer-events: none;
+        .logo{
+            transition: transform 1s,   filter 1s;
+            filter: blur(10px);
+            transform: scale(5);
+            pointer-events: none;
+        }
+        .text{
+            display: table;
+            color:white;
+            font-size: 24px;
+            letter-spacing: 2px;
+            margin: 0 auto;
+            margin-top: 55px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition:opacity .3s, transform .3s;
+            span{
+                position: relative;
+                padding: 0 15px;
+                &:after{
+                    content:"";
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    transform: translateY(-50%);
+                    background: white;
+                    width: 1px;
+                    height: 22px; 
+                }
+                &:first-child{
+                    &::before{
+                        content:"";
+                        display: block;
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        transform: translateY(-50%);
+                        background: white;
+                        width: 1px;
+                        height: 22px;
+                    }
+                }
+            }
+        }
+    }
+    .starCanvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+    }
+    .house {
+        opacity: 0;
+        position: absolute;
+        bottom:24%;
+        left: 50%;
+        transform: translateX(-50%);
+        pointer-events: none;
+        
+    }
+
+    .menu-wrapper{
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        opacity: 0;
+       
+        pointer-events: none;
+        .menu {
+            color:white;
+            display: flex;
+            align-items: center;
+            >*{
+                &.fade {
+                    opacity: 0.5;
+                }
+            }
+            .link{
+                display: block;
+                font-size: 160px;
+                white-space:nowrap;
+                padding: 0 20px;
+                transition: opacity .3s;
+
+            }
+            .dot{
+                font-size: 140px;
+            }
+        }
+    }
+    @media(max-width:1599px){
+        .menu-wrapper .menu{
+            .link{
+                 font-size: 100px;
+            }
+            .dot{
+                font-size: 80px;
+            }
+           
+        }
+    }
+    @media(max-width:1399px){
+        &.menuIn{
+            .menu-wrapper {
+                top: 60%;
+            }
+        }
+        .logo-wrapper .logo{
+            width: 380px;
+        }
+        .menu-wrapper{
+            .menu{        
+                text-align: center;
+                display: block;
+                .link{
+                    font-size: 80px;
+                }
+                .dot{
+                    display: none;
+                }
+            }
+        }
+        .house{
+            width: 600px;
+            bottom: 23%;
+        }
+    }
+    @media(max-width:991px) {
+        background-position: center 100%;
+        &.logoIn{
+            .logo-wrapper{
+                top: 36%;
+            }
+        }
+        .house {
+            width: 500px;
+            bottom: 19.5%;
+        }
+    }
+    @media(max-width:575px){
+        background-size: auto;
+        background-position: center bottom;
+        min-height: initial;
+        &.logoIn{
+            .logo-wrapper{
+                top: 48%;
+            }
+        }
+        &.logoUp {
+            .logo-wrapper {
+                top: 37%;
+                .logo{
+                    transform: scale(0.65);
+                }
+            }
+        }
+        &.menuIn{
+            .logo-wrapper {
+                top: 32%;
+            }
+            .menu-wrapper {
+                top: 64%;
+            }
+        }
+        .logo-wrapper{
+            .logo{
+                width: 256px;
+            }
+            .text{
+                font-size: 20px;
+                text-align: center;
+                margin-top: 20px;
+            }
+        }
+        .menu-wrapper{
+            .menu .link{
+                font-size: 45px;
+                margin-bottom: 58px;
+            }
+
+        }
+        .house{
+            width: 330px;
+            bottom: 233px;
+        }
+        @media(max-height:740px) {
+            background-position: center bottom -50px;
+            .menu-wrapper .menu .link{
+                margin-bottom: 40px;
+            }
+            .house{
+                    bottom: 185px;
+            }
+        }
+        @media(max-height:640px) {
+            background-position: center bottom -100px;
+            .menu-wrapper .menu .link {
+                margin-bottom: 30px;
+            }
+            .house {
+                bottom: 135px;
+            }
+        }
+        @media(max-height:540px) {
+            background-position: center bottom -150px;
+            .menu-wrapper .menu .link {
+                margin-bottom: 20px;
+            }
+            .house {
+                bottom: 85px;
+            }
+        }
+    }
+}
+
