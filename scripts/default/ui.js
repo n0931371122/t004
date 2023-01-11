@@ -4,193 +4,124 @@ $(function (){
     $(window).resize(function(){
         resize();
     }).trigger('resize');
-    $(".jqimgFill").imgLiquid();
-    $('main').css("opacity","1");
     /* ==========================================================================
 		[layout]
     ==========================================================================*/
-        $("header .menu-section .menu a").on("mouseenter",function(){
-            $(this).addClass("active").parents(".menu").addClass("menuHoverMode");
-            $("header .menu-section .number-block").addClass("active").find("div").css("transform","translateY("+$(this).position().top+"px)")
-            $("header .menu-section .number-block .now").text($(this).parent().index() + 1);
-        });
-        $("header .menu-section .menu a").on("mouseleave",function(){
-            $(this).removeClass("active").parents(".menu").removeClass("menuHoverMode");
-            $("header .menu-section .number-block").removeClass("active").find("div").css("transform","translateY(0px)")
-            $("header .menu-section .number-block .now").text(1);
-        });
-        $(".mouse").click(function(){
-           let modify= windowW>767?80:56;
-            $("html,body").animate({
-                scrollTop:windowH - modify
-            },800);
-        });
+    $(".menu-toggle").click(() => {
+        $("header").addClass("openMenu");
+    })
+    $(".close-btn").click(() => {
+        $("header").removeClass("openMenu");
+    })
+    if(windowW>=768){
         $(window).scroll(function(){
-            $(window).scrollTop()==0?$("html").removeClass("scrollMode"):$("html").addClass("scrollMode");
+            $(window).scrollTop()===0?$("header").removeClass("scrollMode"):$("header").addClass("scrollMode");
         }); 
-        $("footer .menu a").on("mouseenter",function(){  
-            $(this).addClass("active").parents(".menu").addClass("menuHoverMode");
-         });
-        $("footer .menu a").on("mouseleave",function(){  
-            $(this).removeClass("active").parents(".menu").removeClass("menuHoverMode");
-         });
-        $("footer .society a").on("mouseenter",function(){  
-            $(this).addClass("active").parents(".society").addClass("menuHoverMode");
-         });
-        $("footer .society a").on("mouseleave",function(){  
-            $(this).removeClass("active").parents(".society").removeClass("menuHoverMode");
-         });
+    }
+    /* ==========================================================================
+		contact
+    ==========================================================================*/
+    let failureModal = new bootstrap.Modal(document.getElementById('failureModal'), {})
+    let successModal = new bootstrap.Modal(document.getElementById('successModal'), {})
+    $(".contact-section .submit").click(() => {
+        let value1=$(".contact-section #name").val();
+        let value2=$(".contact-section #tel").val();
+        let value3=$(".contact-section #email").val();
+
+        console.log(value1)
+        if(value1 === '' || !!value2 === '' || !isEmail(value3)){
+            failureModal.show();   
+        }
+        else{
+            // $("#contactForm").submit();
+            successModal.show();  
+        }
+        
+    });
+
      /* ==========================================================================
 		[page]
     ==========================================================================*/
-        if($("#project").length!==0){
-           window.onload=function(){   
-                $(".slick-pagination .total").text($('.slick-wrapper>div').length);
-                $('.slick-wrapper').on('init', function(event, slick){
-                     $(slick.$slides[0]).addClass("active");
-                });
-               
-                $('.slick-wrapper').on('beforeChange', function(event, slick){
-                     $(slick.$slides).removeClass("active");
-                });
-                $('.slick-wrapper').on('afterChange', function(event, slick, currentSlide){
-                    $(slick.$slides[currentSlide]).addClass("active");
-                    $(".slick-pagination .current").text(currentSlide+1);
-                });
-                $('.slick-wrapper').slick({
-                    infinite: true,
-                    variableWidth: true,
-                    centerMode: true,
-                    slidesToScroll: 1,
-                    arrows:false,
+    //brand
+    if($("#brand").length!==0){  
+      var controller = new ScrollMagic.Controller();
 
-                });
-            }; 
-        }
-        if($("#services").length!==0){
-            let url = location.href;
-            if (url.indexOf('?') != -1) {
-                var nav = url.split('?')[1].split('=')[1];
-                let position=$(".block-"+nav).offset().top;
-                $(window).scrollTop(position - 80);
-            } 
-        }
-        if($("#contact").length!==0){
-            let url = location.href;
-            if (url.indexOf('?') != -1) {
-                var nav = url.split('?')[1].split('=')[1];
-                let position;
-                if(nav=="information"){
-                    position=$(".information-block").offset().top;
-                }
-                else{
-                    position=$(".form-block").offset().top;
-                }
-                $(window).scrollTop(position - 80);
-            } 
-            $(".form-field input,.form-field textarea").focus(function(){
-                $(this).parent(".form-field").addClass("active");
-            });
-            $(".form-field input,.form-field textarea").blur(function(){
-                $(this).parent(".form-field").removeClass("active");
-            });
-            $("#contactForm").validate({
-                    rules: {
-                        name: "required",
-                        tel: "required",
-                        email: {
-                            required: true,
-                            email: true
-                        },
-                        issue:"required",
-                        content: "required",
-                        verificationCode:"required"
-                    },
-                    messages: {
-                        name: "此欄位為必填",
-                        tel: "此欄位為必填",
-                        email: "此欄位為必填",
-                        issue: "此欄位為必填",
-                        content: "此欄位為必填",
-                        verificationCode: "此欄位為必填",
-                    },
-                    submitHandler: function() {
-                        var myModal = new bootstrap.Modal(document.getElementById('sendModal'))
-                        myModal.show()
-                    }
-                });
+      let targetWidth=$(".section-1 .text-block img").width();
+      let targetLeft=Math.floor($(".section-1 .text-block").css("left").replace("px",""));
 
-            var inputs=$(".form-field input,.form-field textarea,.form-field select");
-            var mutationObserver = new MutationObserver(function(mutations) {
-                mutations.forEach(function(mutation){
-                    console.log(mutation.target);
-                    if($(mutation.target).hasClass("error")){
-                        $(mutation.target).parents(".form-field").addClass("error");
-                    }
-                    else{
-                        $(mutation.target).parents(".form-field").removeClass("error");
-                    }
-                    
-                });
-            });
-            inputs.each(function(){
-                mutationObserver.observe($(this).get(0), {
-                    attributes: true,
-                    attributeFilter: ["class"]
-                });
-            });
-            if(windowW<576){
-                $(".verificationCode-input").attr("placeholder","")
+      let value= targetWidth - windowW + targetLeft * 2;
+      var tween = TweenMax.to(".section-1 .text-block", 1, {x: -value, ease: Linear.easeNone});
+
+
+      new ScrollMagic.Scene({triggerElement: "#trigger", duration: 300})
+              .setTween(tween)
+              .setPin("#target", {pushFollowers: false})
+              .addIndicators()
+              .addTo(controller);
+
+
+      new Swiper('#brand .section-2 .img-swiper', {
+        // Default parameters
+        slidesPerView: 1.55,
+        spaceBetween: 70,
+        loop:true,
+        centeredSlides: true,
+        pagination: {
+          el: "#brand .section-2 .img-swiper .swiper-pagination",
+          clickable: true,
+        },
+      })
+      new Swiper('#brand .section-4 .swiper', {
+        pagination: {
+          el: "#brand .section-4 .swiper .swiper-pagination",
+          clickable: true,
+        },
+      })
+    }
+
+    //location
+    if($("#location").length!==0){
+      let locationSection2Box2=new Swiper('#location .section-2 .swiper-box-2 .swiper', {
+        loop:true,
+      })
+      let locationSection2Text=new Swiper('#location .section-2 .swiper-text .swiper', {
+        loop:true,
+        thumbs: {
+          swiper: locationSection2Box2
+        }
+      })
+      let locationSection2Box1=new Swiper('#location .section-2 .swiper-box-1 .swiper', {
+        loop:true,
+          pagination: {
+            el: '#location .section-2 .swiper-box-2 .swiper-pagination',
+            type: 'fraction',
+          },
+          navigation: {
+            nextEl: '#location .section-2 .swiper-box-1 .swiper-button-next',
+            prevEl: '#location .section-2 .swiper-box-1 .swiper-button-prev',
+          },
+          thumbs: {
+            swiper: locationSection2Text
+          },
+          breakpoints: {
+            992: {
+              navigation: {
+                nextEl: '#location .section-2 .swiper-box-2 .swiper-button-next',
+              },
             }
+          }
+      })
 
-        }
+
+      locationSection2Text.slideToLoop(0)
+    }
+
     /* ==========================================================================
 		[common]
     ==========================================================================*/
-    $(".scrollbarY").mCustomScrollbar({axis: "y",});
-    $('.tlt').textillate({
-        loop: false,
-        initialDelay: 0,
-        in: {
-        effect: 'fadeInUp',
-        delay: 80,
-        
-        },
-    });
-    $(".tlt_2").each(function(){
-        let text=$(this).text()
-        let length=text.length;
-        let html="";
-        if($(this).hasClass("large")){
-            for(let i=0;i<length;i++){
-                html+="<span style='animation-delay:"+(i)*0.1+"s;'>"+text.substr(i,1)+"</span>";
-            }
-        }
-        else if($(this).hasClass("small_tlt")){
-            for(let i=0;i<length;i++){
-                html+="<span style='animation-delay:"+(i)*0.025+"s;'>"+text.substr(i,1)+"</span>";
-            }
-        }
-        else{
-            for(let i=0;i<length;i++){
-                html+="<span style='animation-delay:"+(i)*0.05+"s;'>"+text.substr(i,1)+"</span>";
-            }
-        }
 
-        $(this).html(html)
-    });
-    $(".tlt_menu").each(function(){
-        let text=$(this).text()
-        let length=text.length;
-        let html="";
-            for(let i=0;i<length;i++){
-                html+="<span>"+text.substr(i,1)+"</span>";
-            }
 
-        $(this).html(html)
-    });
-
-    $(".gotop").click(function(){
+    $(".goTop").click(function(){
         $("html,body").animate({
             scrollTop:0
         },800);
@@ -200,6 +131,7 @@ $(function (){
 
   
     aosInit();
+    skrollr.init();
     /* ==========================================================================
 		[resize]
     ==========================================================================*/
@@ -208,9 +140,6 @@ $(function (){
         windowW=$(window).innerWidth();
         windowH=$(window).height();
         headerH=$("header").height();
-        windowW<1400?$("[data-aos-delay]").removeAttr("data-aos-delay"):"";
-        $(".banner-section").height(windowH);
-        $(".banner-section .jqimgFill").height(windowH);
     }
 
 })
@@ -220,5 +149,13 @@ function aosInit(){
         offset: 10,
         mirror: true,
     });
+}
+function isEmail(email) {
+  var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  if(!regex.test(email)) {
+    return false;
+  }else{
+    return true;
+  }
 }
 

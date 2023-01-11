@@ -2,23 +2,15 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="icon" type="image/x-icon" href="styles/images/favicon.ico" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="styles/style.css" />
-
+     <?php include "header-title.php"; ?>
 </head>
 
 <body>
-    <div id="index">
+    <main id="index">
+        <h1 class="d-none">興富發</h1>
         <canvas class="starCanvas"></canvas>
         <div class="logo-wrapper">
-            <img class="logo d-table mx-auto" src="styles/images/index/logo.png" alt="">
+            <img class="logo d-table mx-auto" src="styles/images/common/logo-2.svg" alt="">
             <div class="text fw-bold">
                 <span class="d-inline-block">策略總部</span>
                 <span class="d-inline-block">思創中心</span>
@@ -27,7 +19,6 @@
                 <span class="d-inline-block">育成學苑</span>
             </div>
         </div>
-
         <svg class="house for-PC d-none d-sm-block" width="627" height="467" viewBox="0 0 627 467" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_802_664)">
                 <path d="M42 466.587H590.5" stroke="white" stroke-width="1.5" stroke-miterlimit="10" />
@@ -127,8 +118,6 @@
                 </clipPath>
             </defs>
         </svg>
-
-
         <svg class="house for-mobile d-sm-none" width="330" height="246" viewBox="0 0 330 246" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_854_1171)">
             <path d="M22.1053 245.569H310.789" stroke="white" stroke-width="1.5" stroke-miterlimit="10"/>
@@ -228,14 +217,8 @@
                 </clipPath>
             </defs>
         </svg>
-
-
-
-
-
-
-        <div class="menu-wrapper">
-            <div class="menu Montserrat">
+        <div class="menu-wrapper fw-900">
+            <div class="menu">
                 <a class="link" aria-label="brand" href="">BRAND</a>
                 <span class="dot">．</span>
                 <a class="link" aria-label="ABOUT T1" href="">ABOUT T1</a>
@@ -243,14 +226,7 @@
                 <a class="link" aria-label="LOCATION" href="">LOCATION</a>
             </div>
         </div>
-    </div>
-
-
-
-
-
-
-
+    </main>
 
     <script src="./scripts/plugins/jquery.min.js"></script>
     <script src="./scripts/plugins/greensock/gsap.min.js"></script>
@@ -336,8 +312,6 @@
         canvas.prop("height", canvas.height() * 2)
         new V(canvas.get(0))
 
-
-
         $(".menu a").mouseenter(function() {
             $(this).siblings().addClass("fade");
         });
@@ -345,8 +319,6 @@
         $(".menu a").mouseleave(function() {
             $(".menu *").removeClass("fade");
         });
-
-
 
         function init() {
 
@@ -364,7 +336,7 @@
             }, 2000);
             setTimeout(() => {
                 $("#index").addClass("menuIn");
-            }, 4000);
+            }, 3800);
             var tl = new TimelineMax({
                 repeat: 0,
             });
@@ -375,11 +347,9 @@
 
         }
 
-
-
-
         function resize() {
             windowWidth = $(window).width();
+            $("#index").height($(window).height());
             if (windowWidth >= 1400) {
                 let _c = 0;
                 $(window).on("mousemove", (e) => {
@@ -400,7 +370,5 @@
             resize();
         }).trigger('resize');
     </script>
-
 </body>
-
 </html>

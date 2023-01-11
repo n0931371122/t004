@@ -1,6 +1,5 @@
 
 #index{
-    height: 100vh;
     min-height: 630px;
     background-image: url("images/index/bg.jpg");
     background-position: center 76%;
@@ -63,10 +62,12 @@
         width: 100%;
         pointer-events: none;
         .logo{
-            transition: transform 1s,   filter 1s;
+            transition: transform .6s ease-in,
+            filter .6s ease-in;
             filter: blur(10px);
             transform: scale(5);
             pointer-events: none;
+            width: 430px;
         }
         .text{
             display: table;

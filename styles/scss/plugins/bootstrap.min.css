@@ -66,11 +66,11 @@
     box-sizing: border-box
 }
 
-@media (prefers-reduced-motion:no-preference) {
+/* @media (prefers-reduced-motion:no-preference) {
     :root {
         scroll-behavior: smooth
     }
-}
+} */
 
 body {
     margin: 0;
@@ -12128,3 +12128,5 @@ fieldset:disabled .btn {
         display: none !important
     }
 }
+
+/*# sourceMappingURL=bootstrap.min.css.map */
