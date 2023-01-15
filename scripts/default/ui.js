@@ -24,12 +24,11 @@ $(function (){
     let failureModal = new bootstrap.Modal(document.getElementById('failureModal'), {})
     let successModal = new bootstrap.Modal(document.getElementById('successModal'), {})
     $(".contact-section .submit").click(() => {
-        let value1=$(".contact-section #name").val();
-        let value2=$(".contact-section #tel").val();
-        let value3=$(".contact-section #email").val();
+        let name=$(".contact-section #name").val();
+        let tel=$(".contact-section #tel").val();
+        let email=$(".contact-section #email").val();
 
-        console.log(value1)
-        if(value1 === '' || !!value2 === '' || !isEmail(value3)){
+        if(name === '' || !!tel === '' || !isEmail(email)){
             failureModal.show();   
         }
         else{
@@ -56,22 +55,45 @@ $(function (){
       new ScrollMagic.Scene({triggerElement: "#trigger", duration: 300})
               .setTween(tween)
               .setPin("#target", {pushFollowers: false})
-              .addIndicators()
               .addTo(controller);
 
-
-      new Swiper('#brand .section-2 .img-swiper', {
-        // Default parameters
-        slidesPerView: 1.55,
-        spaceBetween: 70,
+      let brandSection2Text=new Swiper('#brand .section-2 .text-swiper', {
         loop:true,
-        centeredSlides: true,
+        autoHeight:true,
+        allowTouchMove:false,
+        speed:800,
         pagination: {
-          el: "#brand .section-2 .img-swiper .swiper-pagination",
-          clickable: true,
+          el: '#brand .section-2 .swiper-pagination.fraction',
+          type: 'fraction',
         },
       })
+      new Swiper('#brand .section-2 .img-swiper', {
+        slidesPerView: 1.13,
+        spaceBetween: 15,
+        speed:800,
+        loop:true,
+        centeredSlides: true,
+        thumbs: {
+          swiper: brandSection2Text
+        },
+        pagination: {
+          el: "#brand .section-2 .swiper-pagination.bullets",
+          clickable: true,
+        },
+        breakpoints: {
+          576: {
+            spaceBetween: 40,
+            slidesPerView: 1.55,
+          },
+          1199: {
+            spaceBetween: 70,
+            slidesPerView: 1.55,
+          }
+        }
+      })
+
       new Swiper('#brand .section-4 .swiper', {
+        speed:800,
         pagination: {
           el: "#brand .section-4 .swiper .swiper-pagination",
           clickable: true,
@@ -79,19 +101,93 @@ $(function (){
       })
     }
 
+    //about
+    if($("#about").length!==0){
+        new Swiper('#about .section-1 .swiper', {
+          spaceBetween: 0,
+          loop:true,
+          centeredSlides: true,
+          speed:800,
+          navigation: {
+            nextEl: '#about .section-1 .swiper .swiper-button-next',
+            prevEl: '#about .section-1 .swiper .swiper-button-prev',
+          },
+          pagination: {
+            el: '#about .section-1 .swiper .swiper-pagination',
+            type: 'fraction',
+          },
+          breakpoints: {
+            575: {
+              slidesPerView:1.3,
+            },
+            1199: {
+              slidesPerView:1.58,
+            }
+          }
+        })
+
+        let aboutSection2Text=new Swiper('#about .section-2 .text-swiper', {
+          loop:true,
+          speed:800,
+          allowTouchMove:false
+        })
+        new Swiper('#about .section-2 .img-swiper', {
+          loop:true,
+          speed:800,
+          navigation: {
+            nextEl: '#about .section-2 .text-box .swiper-button-next',
+            prevEl: '#about .section-2 .text-box .swiper-button-prev',
+          },
+          pagination: {
+            el: '#about .section-2 .text-box .swiper-pagination',
+            type: 'fraction',
+          },
+          thumbs: {
+            swiper: aboutSection2Text
+          }
+        })
+        new Swiper('#about .section-3 .swiper', {
+          slidesPerView:1,
+          spaceBetween:52,
+          speed:800,
+          loop:true,
+          navigation: {
+            nextEl: '#about .section-3 .swiper .swiper-button-next',
+            prevEl: '#about .section-3 .swiper .swiper-button-prev',
+          },
+          pagination: {
+            el: '#about .section-3 .swiper .swiper-pagination',
+            type: 'progressbar',
+          },
+          breakpoints: {
+            768: {
+              slidesPerView:1.6,
+            },
+            991: {
+              slidesPerView:2.32,
+            }
+          }
+        })
+    }
+
     //location
     if($("#location").length!==0){
       let locationSection2Box2=new Swiper('#location .section-2 .swiper-box-2 .swiper', {
         loop:true,
+        speed:800,
+        allowTouchMove:false,
       })
       let locationSection2Text=new Swiper('#location .section-2 .swiper-text .swiper', {
         loop:true,
+        speed:800,
+        allowTouchMove:false,
         thumbs: {
           swiper: locationSection2Box2
         }
       })
       let locationSection2Box1=new Swiper('#location .section-2 .swiper-box-1 .swiper', {
         loop:true,
+        speed:800,
           pagination: {
             el: '#location .section-2 .swiper-box-2 .swiper-pagination',
             type: 'fraction',
@@ -120,8 +216,13 @@ $(function (){
 		[common]
     ==========================================================================*/
 
-
-    $(".goTop").click(function(){
+    $(".reserve-btn").click(() => {
+      $("header").removeClass("openMenu");
+        $("html,body").animate({
+            scrollTop:$(".contact-section").offset().top - $("header").height()
+        },800);
+    })
+    $(".goTop").click(() => {
         $("html,body").animate({
             scrollTop:0
         },800);

@@ -219,11 +219,11 @@
         </svg>
         <div class="menu-wrapper fw-900">
             <div class="menu">
-                <a class="link" aria-label="brand" href="">BRAND</a>
+                <a class="link" aria-label="brand" href="brand.php">BRAND</a>
                 <span class="dot">．</span>
-                <a class="link" aria-label="ABOUT T1" href="">ABOUT T1</a>
+                <a class="link" aria-label="ABOUT T1" href="about.php">ABOUT T1</a>
                 <span class="dot">．</span>
-                <a class="link" aria-label="LOCATION" href="">LOCATION</a>
+                <a class="link" aria-label="LOCATION" href="location.php">LOCATION</a>
             </div>
         </div>
     </main>

@@ -22,7 +22,7 @@
             top: -100px;
             width: 100px;
             height: 2px;
-            background: red;
+            pointer-events: none;
         }
         .img-block{
             margin-top: -38px;
@@ -47,7 +47,7 @@
                         bottom: 0;
                         left: 0;
                         width: 36px;
-                        height: 1px;
+                        height: 2px;
                         background: rgba(255, 255, 255, 0.5);
                     }
                 }
@@ -55,8 +55,8 @@
             .img-box{
                 position: relative;
                 height: 700px;
-                background-image: url(images/brand/1.jpg);
-                background-position:left  center;
+                background-image: url(images/brand/1.webp);
+                background-position:60% center;
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-attachment: fixed;
@@ -72,10 +72,16 @@
         }
     }
     .section-2{
-        margin-bottom: 300px;
+        padding-bottom: 90px;
         padding-top: 120px;
+        background-image: url(images/brand/bg-dec.png);
+        background-repeat: no-repeat;
+        background-position: right top;
+        background-size: auto 100%;
         img{
             width: 100%;
+            height: 675px;
+            object-fit: cover;
         }
         .title-block{
             max-width: 810px;
@@ -88,11 +94,43 @@
             right: 0;
             width: 100%;
         }
-
+        .text-swiper-wrapper{
+            position: absolute;
+            left: 66.5%;
+            top:541px;
+            transform: translateX(-50%);
+            width: 395px;
+            z-index: 1;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+            &::before{
+                content:"";
+                display: block;
+                position: absolute;
+                top: 56px;
+                left: -32px;
+                background: #C7A164;
+                width: 64px;
+                height: 2px;
+                z-index: 2;
+            }
+            .text-swiper {
+                .swiper-slide {
+                    padding: 40px 48px;
+                    background: #085363;
+                    
+                }
+            }
+        }
+        .swiper-pagination.swiper-pagination-fraction{
+            width: calc(64.52% - 35px);
+        }
+        .swiper-pagination.bullets{
+            padding-top: 83px;
+        }
     }
     .section-3{
         height: 745px;
-        background-image: url(images/brand/3.jpg);
+        background-image: url(images/brand/3.webp);
         background-position: center;
         background-repeat: no-repeat;
         background-attachment: fixed;
@@ -133,6 +171,8 @@
                         img{
                             max-width: 100%;
                             width: 100%;
+                            height: 700px;
+                            object-fit: cover;
                         }
                     }
                     .swiper-pagination {
@@ -188,6 +228,8 @@
             }
         }
     }
+
+
     @media(max-width:1599px){
         .section-4 .main-block .wrapper .text-box{
             padding-left: 180px;   
@@ -210,8 +252,26 @@
         .section-1 .text-block img{
             width: 2068px;
         }
-        .section-4 .text-block img {
-            width: 1053px;
+        .section-2{
+            img{
+               height: 460px;
+            }
+            .text-swiper-wrapper{
+                top: 390px;
+                left: 70%;
+            }
+        }
+        .section-4{
+            padding-top: 175px;
+            .text-block img{
+                 width: 1053px;
+            }
+            .main-block{
+                margin-top: -280px;
+                .wrapper .img-box .swiper-wrapper img{
+                    height: 550px;
+                }
+            }
         }
     }
     @media(max-width:1199px){
@@ -220,7 +280,7 @@
             .img-block{  
                 .img-box{
                     height: 600px;
-                    background-position: left 0 center;
+                    background-attachment: initial;
                 }
                 .text-box{
                     padding-left: 40px;
@@ -234,21 +294,53 @@
                 width: 1608px;
             }
         }
+        .section-2 .text-swiper-wrapper{
+            position: relative;
+            top: auto;
+            left: auto;
+            transform: none;
+            margin: auto;
+            margin-top: -40px;
+            width: 56%;
+            &::before{
+                width: 28px;
+                left: -14px;
+                top: 38px;
+            }
+            .text-swiper .swiper-slide{
+                padding: 23px 30px;
+            }
+        }
         .section-3{
             height: 600px; 
+            background-attachment:initial;
         }
-
-
         .section-4{  
+            &::after{
+                content:"";
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: calc(100% - 650px);
+                background: #073742;
+                z-index: -1;
+            }
             .text-block img {
                 width: 819px;
             }
             .main-block{          
                 padding: 0 120px;
+                margin-top: -30px;
                 .wrapper{
                     .img-box {
                         position: static;
                         width: auto;
+                        padding-bottom: 40px;
+                        .swiper-wrapper img{
+                            height: 670px;
+                        }
                         .swiper-pagination{
                             right: 50%;
                             transform: translateX(50%);
@@ -257,7 +349,9 @@
 
                     .text-box {
                         padding: 40px;
+                        padding-top: 0;
                         width: 100%;
+                        background: initial;
                         .subTitle::before{
                             width: 100%;
                         }
@@ -304,8 +398,26 @@
                 }
             }
         }
-        .section-4 .text-block img{
-            width: 702px;
+        .section-2{
+            img{
+                height: 300px;
+            }
+            .swiper-pagination.bullets{
+                padding-top: 40px;
+            }
+        }
+        .section-4{
+            padding-bottom: 80px;
+            padding-top: 100px;
+            &::after{
+                height: calc(100% - 446px);
+            }
+            .text-block img{
+                 width: 702px;
+            }
+            .main-block .wrapper .img-box .swiper-wrapper img{
+                height: 450px;
+            }
         }
     }
     @media(max-width:767px){
@@ -349,12 +461,30 @@
         .section-1{
             .img-block .img-box{
                 height: 238px;
+                background-attachment: initial;
             }
             .text-block{
                 bottom: 230px;
                 img{
                     width: 781px;
                 }
+            }
+        }
+        .section-2{
+            padding-bottom: 50px;
+            padding-top: 52px;
+            img{
+                height: auto;
+            }
+            .text-swiper-wrapper{
+                margin-top: -23px;
+                width: 79%;
+            }
+            .title-block{
+                padding-bottom: 20px;
+            }
+            .swiper-pagination.bullets{
+                padding-top: 20px;
             }
         }
         .section-3 .text-block{
@@ -368,8 +498,44 @@
             }
             
         }
-        .section-4 .text-block img{
-            width: 398px;
+        .section-4{
+            padding-top: 70px;
+            padding-bottom: 0;
+            &:after{
+                    height: calc(100% - 297px);
+            }
+            .text-block img{
+                width: 398px;
+            }
+            .main-block{
+                margin-top: -15px;
+                padding-left: 24px;
+                padding-right: 24px;
+                .wrapper{
+                    .text-box{
+                        padding-left: 10px;
+                        padding-right: 10px;
+                        .title{
+                            margin-bottom: 11px;
+                        }
+                        .subTitle{
+                            padding-right: 15px;
+                        }
+                        .description{
+                            padding-right: 15px;
+                        }
+                    }
+                    .img-box{
+                        padding-bottom:30px;
+                        .swiper-wrapper{
+                            margin-bottom: 35px;
+                            img{
+                                height: 302px;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

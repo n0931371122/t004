@@ -11,7 +11,7 @@
             <div class="center-box mb-4 mb-xl-0">
                 <span class="d-flex d-sm-inline">
                     <span class="flex-shrink-0">接待會館：</span>
-                    <span>台北市內湖區堤頂大道一段1號1樓</span>
+                    <a aria-label="地址" href="https://goo.gl/maps/1PZDBY6Lb27uJFcG6" target="_blank">台北市南港區向陽路188號</a>
                 </span>
                 <span>
                     <i class="icon-address"></i>
@@ -20,7 +20,7 @@
                 <span>
                     <i class="icon-phone"></i>
                     <span>禮賓專線：</span>
-                    <a aria-label="電話" href=":+886-2-2782-8888">02-2782-8888</a> 
+                    <a aria-label="電話" href="tel:+886-2-2782-8888">02-2782-8888</a> 
                 </span>
             </div>
             <div class="left-box d-table d-xl-block mx-auto mx-xl-0">

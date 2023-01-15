@@ -6,10 +6,10 @@
 <body>
     <?php include "header.php"; ?>
     <main id="location">
-        <div class="banner-section position-relative text-white" style="background-image: url(styles/images/location/banner-1.jpg);" data-0=" background-position-y: 0px;" data-200=" background-position-y: 100px;">
+        <div class="banner-section position-relative text-white" style="background-image: url(styles/images/location/banner-1.webp);" data-0=" background-position-y: 0px;" data-200=" background-position-y: 100px;">
             <img class="logo d-none d-sm-table mx-auto" src="styles/images/common/logo-2.svg" alt="" data-0="transform:translateY(0px)" data-200="transform:translateY(100px)">
             <h1 class="title d-table fs-170 fw-bolder mx-auto" data-0="transform:translateY(0px)" data-200="transform:translateY(100px)">LOCATION</h1>
-            <img class="building position-absolute" src="styles/images/location/banner-2.png" alt="" >
+            <img class="building position-absolute" src="styles/images/location/banner-2.webp" alt="" >
             <div class="scroll d-none d-xl-block fs-14 fw-bold text-center">
                 <span class="d-block">SCROLL</span>
                 <img src="styles/images/common/scroll.svg" alt="">
@@ -29,7 +29,7 @@
                 </div>
                 <div class="row row-cols-lg-2 g-0">
                     <div class="box position-relative">
-                        <img class="h-100" src="styles/images/location/1-1.jpg" alt="">
+                        <img class="h-100" src="styles/images/location/1-1.webp" alt="">
                         <div class="text">
                             <p class="title fs-32 fw-bold" data-aos="fade-up">台北產經金三角</p>
                             <p class="fs-18 lh-17" data-aos="fade-up">
@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     <div class="box position-relative">
-                        <img class="h-100" src="styles/images/location/1-2.jpg" alt="">    
+                        <img class="h-100" src="styles/images/location/1-2.webp" alt="">    
                         <div class="text">
                             <p class="title fs-32 fw-bold" data-aos="fade-up">內湖萬有引力 百大總部磁王</p>
                             <p class="fs-18 lh-17" data-aos="fade-up">威剛總部入主、萬海航運列席、三商美邦定址、浩鑫購地自建總部，中國信託科技行政雙中心。新一代總部換日線『興富發』定址內湖核心、聚峰為首。</p>
@@ -57,39 +57,37 @@
                     <div class="swiper h-100">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                1
-                                <img src="styles/images/location/2-1.jpg" alt="">
+                                <img src="styles/images/location/2-1.webp" alt="">
                             </div>
                             <div class="swiper-slide">
-                                2
-                                <img src="styles/images/location/2-1.jpg" alt="">
+                                <img src="styles/images/location/2-2.webp" alt="">
                             </div>
                             <div class="swiper-slide">
-                                3
-                                <img src="styles/images/location/2-1.jpg" alt="">
+                                <img src="styles/images/location/2-3.webp" alt="">
                             </div>
                             <div class="swiper-slide">
-                                4
-                                <img src="styles/images/location/2-1.jpg" alt="">
+                                <img src="styles/images/location/2-4.webp" alt="">
                             </div>
                             <div class="swiper-slide">
-                                5
-                                <img src="styles/images/location/2-1.jpg" alt="">
+                                <img src="styles/images/location/2-5.webp" alt="">
                             </div>
                         </div>
                     </div>
                     <div class="d-flex justify-content-center mt-4 mt-sm-0">
-                        <div class="swiper-button swiper-button-prev d-sm-none mx-2">
+                        <div class="swiper-button swiper-button-prev bg-hover-golden d-sm-none mx-2">
                             <i class="icon-left"></i>
                         </div>
-                        <div class="swiper-button swiper-button-next d-lg-none mx-2">
+                        <div class="swiper-button swiper-button-next bg-hover-golden d-lg-none mx-2">
                             <i class="icon-right"></i>
                         </div>
                     </div>
                     <div class="swiper-pagination fw-600 fs-15 d-none d-sm-block"></div>
                 </div>
                 <div class="text-box">
-                    <p class="fs-48 fw-bold" data-aos="fade-up">以一為名 優勢成雙</p>
+                    <p class="fs-48 fw-bold" data-aos="fade-up">
+                        <span class="d-block d-sm-inline">以一為名</span>
+                        <span class="d-block d-sm-inline">優勢成雙</span>
+                    </p>
                     <div class="swiper-text" data-aos="fade-up">
                         <div class="swiper">
                             <div class="swiper-wrapper">
@@ -142,28 +140,23 @@
                     <div class="swiper h-100">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                2
-                                <img src="styles/images/location/2-1.jpg" alt="">
+                                <img src="styles/images/location/2-2.webp" alt="">
                             </div>
                             <div class="swiper-slide">
-                                3
-                                <img src="styles/images/location/2-1.jpg" alt="">
+                                <img src="styles/images/location/2-3.webp" alt="">
                             </div>
                             <div class="swiper-slide">
-                                4
-                                <img src="styles/images/location/2-1.jpg" alt="">
+                                <img src="styles/images/location/2-4.webp" alt="">
                             </div>
                             <div class="swiper-slide">
-                                5
-                                <img src="styles/images/location/2-1.jpg" alt="">
+                                <img src="styles/images/location/2-5.webp" alt="">
                             </div>
                             <div class="swiper-slide">
-                                1
-                                <img src="styles/images/location/2-1.jpg" alt="">
+                                <img src="styles/images/location/2-1.webp" alt="">
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-button swiper-button-next">
+                    <div class="swiper-button swiper-button-next bg-hover-golden">
                         <i class="icon-right"></i>
                     </div>
                     <div class="swiper-pagination fw-600 fs-15"></div>

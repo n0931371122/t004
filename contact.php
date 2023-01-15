@@ -1,7 +1,7 @@
 <div class="contact-section flex-center text-white les-1">
     <div class="block d-lg-flex">
         <div class="text-box">
-            <span class="title fs-65">We’d love to hear from You</span>
+            <span class="title fs-65 fw-bold">We’d love to hear from You</span>
             <div class="description d-sm-flex fs-18">
                 <div>
                     <span class="d-block">為了提供更完善的服務，請務必輸入正確的資料</span>
@@ -29,7 +29,7 @@
                     <span class="d-block">2. 客戶管理與服務</span>
                     <span class="d-block">3. 本公司行銷業務之推廣本案實際內容以現場公布為準</span>
                 </div>
-                <button class="submit fs-18" type="button">送出表單</button>
+                <button class="submit fs-18 bg-hover-golden" type="button">送出表單</button>
             </form>
         </div>
     </div>
@@ -52,11 +52,13 @@
   <div class="modal-dialog modal-dialog-centered ">
     <div class="modal-content">
       <div class="modal-body">
-        送出成功
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
+          <img src="styles/images/common/contact-build.webp" alt="">
+          <div class="text">
+            <p class="fs-28 fw-bold">表單已成功送出</p>
+            <p class="fs-18 mb-4">請耐心等候一些時間，客服人員將盡速與您聯繫，謝謝！</p>
+            <button type="button" class="btn bg-hover-golden" data-bs-dismiss="modal">關閉</button>
+        </div>
+        </div>
     </div>
   </div>
 </div>
