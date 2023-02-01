@@ -6,7 +6,6 @@ body {
   font-family: "Montserrat", "Noto Sans TC";
   font-size: 16px;
   overflow-x: hidden;
-  background: #085363;
 }
 
 a {
@@ -420,7 +419,7 @@ header .menu-wrapper .menu {
 header .menu-wrapper .menu li {
   padding: 0 30px;
 }
-header .menu-wrapper .menu li:hover a::after {
+header .menu-wrapper .menu li.active a::after {
   width: 100%;
 }
 header .menu-wrapper .menu li a {
@@ -438,6 +437,9 @@ header .menu-wrapper .menu li a::after {
   background: white;
   transform: translateX(-50%);
   transition: width 0.3s;
+}
+header .menu-wrapper .menu li a:hover {
+  color: rgb(199, 161, 100);
 }
 header .menu-wrapper .tel span:nth-child(1) {
   padding: 7px 24px;
@@ -746,44 +748,6 @@ header .menu-wrapper .reserve-btn {
     width: 100%;
     height: 52px;
     margin-top: 21px;
-  }
-}
-
-#successModal .modal-dialog {
-  max-width: 496px;
-  padding: 0 24px;
-  margin: auto;
-}
-#successModal .modal-dialog .modal-content {
-  background: transparent;
-  border: none;
-}
-#successModal .modal-dialog .modal-content .modal-body {
-  padding: 0;
-}
-#successModal .modal-dialog .modal-content .modal-body img {
-  max-width: 100%;
-}
-#successModal .modal-dialog .modal-content .modal-body .text {
-  padding: 0 80px;
-  padding-top: 40px;
-  padding-bottom: 32px;
-  color: white;
-  text-align: center;
-  background: #085363;
-}
-#successModal .modal-dialog .modal-content .modal-body .text button {
-  background: #C7A164;
-  width: 170px;
-  height: 50px;
-  margin: 0 auto;
-  color: white;
-  border-radius: 0;
-}
-@media (max-width: 575px) {
-  #successModal .modal-dialog .modal-content .modal-body .text {
-    padding-right: 40px;
-    padding-left: 40px;
   }
 }
 
@@ -1193,6 +1157,9 @@ footer .goTop {
   }
 }
 
+#brand {
+  background: #085363;
+}
 #brand .banner-section {
   height: 1153px;
 }
@@ -1250,7 +1217,7 @@ footer .goTop {
   position: relative;
   height: 700px;
   background-image: url(images/brand/1.webp);
-  background-position: 60% center;
+  background-position: 30% center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -1263,7 +1230,7 @@ footer .goTop {
 #brand .section-2 {
   padding-bottom: 90px;
   padding-top: 120px;
-  background-image: url(images/brand/bg-dec.png);
+  background-image: url(images/brand/bg-dec.webp);
   background-repeat: no-repeat;
   background-position: right top;
   background-size: auto 100%;
@@ -1697,6 +1664,9 @@ footer .goTop {
   }
 }
 
+#about {
+  background: #085363;
+}
 #about .banner-section {
   height: 1360px;
 }
@@ -1851,7 +1821,7 @@ footer .goTop {
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url(images/about/bg.png);
+  background-image: url(images/about/bg.webp);
   background-repeat: no-repeat;
   background-position: right top;
   height: 700px;
@@ -2188,6 +2158,9 @@ footer .goTop {
   }
 }
 
+#location {
+  background: #085363;
+}
 #location .banner-section {
   height: 1097px;
   background-position-y: 100px;
@@ -2269,7 +2242,7 @@ footer .goTop {
   background: white;
 }
 #location .section-2 {
-  background-image: url(images/location/bg.png);
+  background-image: url(images/location/bg.webp);
   padding-top: 240px;
   padding-bottom: 140px;
   background-size: cover;
@@ -2593,9 +2566,42 @@ footer .goTop {
   padding: 50px;
 }
 #data h1 {
-  text-align: center;
   font-size: 28px;
-  margin-bottom: 30px;
+}
+#data .date-wrapper {
+  border: 1px solid rgb(218, 218, 218);
+  padding: 10px 10px;
+  position: relative;
+  cursor: pointer;
+}
+#data .date-wrapper input {
+  cursor: pointer;
+}
+#data .date-wrapper .icon-date {
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  pointer-events: none;
+}
+#data .submit,
+#data .excel {
+  background: rgb(8, 83, 99);
+  color: white;
+  height: 46px;
+  padding: 0 19px;
+  min-width: 100px;
+  margin-left: 10px;
+  transition: background 0.3s;
+}
+#data .submit i,
+#data .excel i {
+  font-size: 24px;
+}
+#data .submit:hover,
+#data .excel:hover {
+  background: #096577;
 }
 #data table {
   width: 100%;
@@ -2615,4 +2621,9 @@ footer .goTop {
   margin-top: 50px;
   font-size: 12px;
   text-align: center;
+}
+
+#ui-datepicker-div .ui-widget-header {
+  background: rgb(8, 83, 99);
+  border: 1px solid rgb(8, 83, 99);
 }/*# sourceMappingURL=style.css.map */

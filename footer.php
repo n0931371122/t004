@@ -11,11 +11,11 @@
             <div class="center-box mb-4 mb-xl-0">
                 <span class="d-flex d-sm-inline">
                     <span class="flex-shrink-0">接待會館：</span>
-                    <a aria-label="地址" href="https://goo.gl/maps/1PZDBY6Lb27uJFcG6" target="_blank">台北市南港區向陽路188號</a>
+                    <a aria-label="地址" href="https://goo.gl/maps/FFC6nRWpDkFQjDUA7" target="_blank">台北市南港區向陽路188號</a>
                 </span>
                 <span>
                     <i class="icon-address"></i>
-                    <a aria-label="地址" href="" target="_blank">基地位置</a>
+                    <a aria-label="地址" href="https://goo.gl/maps/N2Kt6xfNZtLAVzkj7" target="_blank">基地位置</a>
                 </span>
                 <span>
                     <i class="icon-phone"></i>

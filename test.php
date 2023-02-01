@@ -15,29 +15,7 @@
                 <img src="styles/images/common/scroll.svg" alt="">
             </div>
         </div>
-        <div class="section-1 position-relative z-1">
-            <div id="trigger"></div>
-            <div class="img-block text-white mx-auto">
-                <div class="wrapper position-relative">
-                    <div class="text-box">
-                        <p class="title fs-48 fw-bold lh-12 NotoSansTC">
-                            <span class="d-block" data-aos="fade-up">40年豪宅到豪辦</span>
-                            <span class="d-block" data-aos="fade-up">並肩興富發 巨拓世界江山</span>
-                        </p>
-                        <p class="description fs-20 lh-17" data-aos="fade-up">
-                            <span class="d-block">『興富發』3都5年600億佈局，從Builder轉型為</span>
-                            <span class="d-block">Developer，領銜台灣商辦之王。</span>
-                            <span class="d-block">從大直CBD到內湖智庫，力挺百大企業，競向時代之最。</span>
-                        </p>
-                    </div>
-                    <div class="img-box">
-                    </div>
-                </div>
-            </div>
-            <div class="text-block">
-                <img src="styles/images/brand/section-1-text.svg" alt="">
-            </div>
-        </div>
+
         <div class="section-2 position-relative text-white">
             <div class="title-block d-table text-center mx-auto">
                 <p class="fs-48 fw-bold mb-2 mb-sm-3">
@@ -138,7 +116,7 @@
         </div>
 
     </main>
-    <?php include "contact.php"; ?>
+      <?php include "contact.php"; ?>
     <?php include "footer.php"; ?>
     <?php include "footer-js.php"; ?>
 </body>

@@ -50,7 +50,7 @@ header{
             transition:margin-left .3s;
             li{
                 padding: 0 30px;
-                &:hover{
+                &.active{
                     a{
                         &::after{
                             width: 100%;
@@ -71,6 +71,9 @@ header{
                         background: white;
                         transform: translateX(-50%);
                         transition: width .3s;
+                    }
+                    &:hover{
+                        color: rgb(199, 161, 100);
                     }
                 }
             }
@@ -227,7 +230,7 @@ header{
                         }
                         span{
                             &:nth-child(1){
-                                font-size: 18px;
+                                font-size: 18px; 
                             }
                             &:nth-child(2){
                                 font-size: 32px;

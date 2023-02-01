@@ -23,6 +23,13 @@
                     <label for="email">電子信箱&nbsp;*</label>
                     <input id="email" name="email" type="email">
                 </div>
+                <div class="form-group fs-18">
+                    <label for="verification">驗證碼&nbsp;*</label>
+                    <div class="d-flex flex-grow-1">
+                      <input id="verification" name="verification" type="text">
+                      <img src="styles/images/common/verification.png" alt="">
+                    </div>
+                </div>
                 <div class="note">
                     <span class="d-block">你所登錄的個人資料將做為以下用途</span>
                     <span class="d-block">1. 本網站所載之相關事項通知</span>

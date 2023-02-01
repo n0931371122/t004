@@ -87,42 +87,42 @@
     }
 }
 
-#successModal{
-    .modal-dialog{
-        max-width: 496px;
-        padding: 0 24px;
-        margin: auto;
-        .modal-content{
-            background: transparent;
-            border:none;
-            .modal-body{
-                padding: 0;
-                img{
-                    max-width: 100%;
-                }
-                .text{
-                    padding: 0 80px;
-                    padding-top: 40px;
-                    padding-bottom: 32px;
-                    color:white;
-                    text-align: center;
-                    background: #085363;
-                    button{
-                        background: #C7A164;
-                        width: 170px;
-                        height: 50px;
-                        margin: 0 auto;
-                        color:white;
-                        border-radius: 0;
-                    }
-                }
-            }
-        }
-    }
-    @media(max-width:575px){
-        .modal-dialog .modal-content .modal-body .text{
-            padding-right: 40px;
-            padding-left: 40px;
-        }
-    }
-}
+// #successModal{
+//     .modal-dialog{
+//         max-width: 496px;
+//         padding: 0 24px;
+//         margin: auto;
+//         .modal-content{
+//             background: transparent;
+//             border:none;
+//             .modal-body{
+//                 padding: 0;
+//                 img{
+//                     max-width: 100%;
+//                 }
+//                 .text{
+//                     padding: 0 80px;
+//                     padding-top: 40px;
+//                     padding-bottom: 32px;
+//                     color:white;
+//                     text-align: center;
+//                     background: #085363;
+//                     button{
+//                         background: #C7A164;
+//                         width: 170px;
+//                         height: 50px;
+//                         margin: 0 auto;
+//                         color:white;
+//                         border-radius: 0;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+//     @media(max-width:575px){
+//         .modal-dialog .modal-content .modal-body .text{
+//             padding-right: 40px;
+//             padding-left: 40px;
+//         }
+//     }
+// }

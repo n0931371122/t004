@@ -1,9 +1,41 @@
 #data{
     padding: 50px;
     h1 {
-        text-align: center;
         font-size: 28px;
-        margin-bottom: 30px;
+    }
+    .date-wrapper{
+        border:1px solid rgba(218, 218, 218, 1);
+        padding:10px 10px;
+        position: relative;
+        cursor: pointer;
+        input{
+            cursor: pointer;
+        }
+        .icon-date{
+            font-size: 24px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 10px;
+            pointer-events: none;
+        }
+
+    } 
+    .submit,
+    .excel {
+        background: rgba(8, 83, 99, 1);
+        color:white;
+        height: 46px;
+        padding: 0 19px;
+        min-width: 100px;
+        margin-left: 10px;
+        transition: background .3s;
+        i{
+            font-size: 24px;
+        }
+        &:hover{
+            background: #096577;
+        }
     }
     table{
         width: 100%;
@@ -27,5 +59,11 @@
         margin-top: 50px;
         font-size: 12px;
         text-align: center;
+    }
+}
+#ui-datepicker-div{
+    .ui-widget-header{
+        background: rgba(8, 83, 99, 1);
+        border:1px solid rgba(8, 83, 99, 1);
     }
 }

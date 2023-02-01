@@ -43,6 +43,7 @@ $(function (){
     ==========================================================================*/
     //brand
     if($("#brand").length!==0){  
+      $("header .menu-wrapper .menu li").eq(0).addClass("active");
       var controller = new ScrollMagic.Controller();
 
       let targetWidth=$(".section-1 .text-block img").width();
@@ -103,6 +104,7 @@ $(function (){
 
     //about
     if($("#about").length!==0){
+            $("header .menu-wrapper .menu li").eq(1).addClass("active");
         new Swiper('#about .section-1 .swiper', {
           spaceBetween: 0,
           loop:true,
@@ -172,6 +174,7 @@ $(function (){
 
     //location
     if($("#location").length!==0){
+      $("header .menu-wrapper .menu li").eq(2).addClass("active");
       let locationSection2Box2=new Swiper('#location .section-2 .swiper-box-2 .swiper', {
         loop:true,
         speed:800,
