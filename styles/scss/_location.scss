@@ -1,8 +1,13 @@
 #location{
-        background: #085363;
+    background: #085363;
     .banner-section{
         height: 1097px;
-        background-position-y: 100px;
+        transition:background-position-y .3s;
+            background-repeat: no-repeat;
+        &.active{
+            background-position-y: 50px;
+        }
+        
     }
     .section-1{
         padding-top: 143px;

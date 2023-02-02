@@ -7,15 +7,19 @@
     <?php include "header.php"; ?>
     <main id="brand">
         <div class="banner-section position-relative text-white" style="background-image: url(styles/images/brand/banner-1.webp);">
-            <img class="logo d-none d-sm-table mx-auto" src="styles/images/common/logo-2.svg" alt="" data-0="transform:translateY(0px)" data-200="transform:translateY(100px)">
-            <h1 class="title d-table fs-170 fw-bolder mx-auto" data-0="transform:translateY(0px)" data-200="transform:translateY(100px)">BRAND</h1>
+            <div id="move-trigger"></div>
+            <div id="move-end-trigger"></div>
+            <div class="move-element">
+                <img class="logo d-none d-sm-table mx-auto" src="styles/images/common/logo-2.svg" alt="">
+                <h1 class="title d-table fs-170 fw-bolder mx-auto">BRAND</h1>
+            </div>
             <img class="building position-absolute" src="styles/images/brand/banner-2.webp" alt="">
             <div class="scroll d-none d-xl-block fs-14 fw-bold text-center">
                 <span class="d-block">SCROLL</span>
                 <img src="styles/images/common/scroll.svg" alt="">
             </div>
         </div>
-        <div class="section-1 position-relative z-1">
+        <div class="section-1 position-relative z-1 overflow-hidden">
             <div id="trigger"></div>
             <div class="img-block text-white mx-auto">
                 <div class="wrapper position-relative">
@@ -101,7 +105,7 @@
                 </p>
             </div>
         </div>
-        <div class="section-4 position-relative">
+        <div class="section-4 position-relative overflow-hidden">
             <div class="text-block d-table position-relative z-2 mx-auto" data-aos="fade-up">
                 <img src="styles/images/brand/section-4-text.svg" alt="">
             </div>

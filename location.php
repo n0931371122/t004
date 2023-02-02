@@ -6,9 +6,13 @@
 <body>
     <?php include "header.php"; ?>
     <main id="location">
-        <div class="banner-section position-relative text-white" style="background-image: url(styles/images/location/banner-1.webp);" data-0=" background-position-y: 0px;" data-200=" background-position-y: 100px;">
-            <img class="logo d-none d-sm-table mx-auto" src="styles/images/common/logo-2.svg" alt="" data-0="transform:translateY(0px)" data-200="transform:translateY(100px)">
-            <h1 class="title d-table fs-170 fw-bolder mx-auto" data-0="transform:translateY(0px)" data-200="transform:translateY(100px)">LOCATION</h1>
+        <div class="banner-section position-relative text-white" style="background-image: url(styles/images/location/banner-1.webp);">
+            <div id="move-trigger"></div>
+            <div id="move-end-trigger"></div>
+            <div class="move-element">
+                <img class="logo d-none d-sm-table mx-auto" src="styles/images/common/logo-2.svg" alt="">
+                <h1 class="title d-table fs-170 fw-bolder mx-auto">LOCATION</h1>
+            </div> 
             <img class="building position-absolute" src="styles/images/location/banner-2.webp" alt="" >
             <div class="scroll d-none d-xl-block fs-14 fw-bold text-center">
                 <span class="d-block">SCROLL</span>

@@ -169,6 +169,22 @@
     overflow: hidden;
     background-size: cover;
     background-position: center;
+    #move-trigger{
+        position: absolute;
+        right: 0;
+        top: 50px;
+        width: 100px;
+        height: 2px;
+        pointer-events: none;
+    }
+    #move-end-trigger {
+        position: absolute;
+        right: 0;
+        top: 100px;
+        width: 100px;
+        height: 2px;
+        pointer-events: none;
+    }
     .logo {
         padding-top: 100px;
     }

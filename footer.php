@@ -3,7 +3,7 @@
         <div class="top-block fs-30 fw-bold text-center">
             <span class="d-block d-md-inline">內湖雙捷運 全棟可售</span>
             <span>
-                <span class="fw-normal">150-1300</span>
+                <span class="fw-normal">150-10000</span>
                 <span>坪</span>
             </span>
         </div>

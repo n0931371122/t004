@@ -7,10 +7,13 @@
         max-width: 1380px;
         .text-box{
             max-width: 498px;
+            margin-top: 65px;
             .title{
                 line-height: 1.2; 
+                
             }
             .description {
+                margin-top: 18px;
                 &::before {
                     content: "";
                     display: block;
@@ -59,16 +62,22 @@
                 padding-left: 0;
                 padding-top: 50px;
             }
-
+            .text-box{
+                margin-top: 0;
+            }
         }
     }
     @media(max-width:575px){
         .block{
             padding: 40px;
         }
-        .block .text-box .description::before{
-            margin-bottom: 26px;
-            width: 30px;
+        .block .text-box .description{
+            margin-top: 0;
+            &::before{
+                margin-bottom: 26px;
+                width: 30px;
+            }
+
         }
         .block .form-box{
             padding-top: 7px;

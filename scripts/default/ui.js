@@ -39,6 +39,21 @@ $(function (){
     });
 
      /* ==========================================================================
+		[common]
+    ==========================================================================*/
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.fromTo(".banner-section .move-element",{y:0}, {
+      y: 100,
+      scrollTrigger: {
+        scrub: 1,
+        trigger: "#move-trigger", //觸發得物件
+        start: "top top", // (物件開始位置, 卷軸開始位置) top center bottom px
+        endTrigger:"#move-end-trigger"
+      }
+    });
+
+
+     /* ==========================================================================
 		[page]
     ==========================================================================*/
     //brand
@@ -174,6 +189,20 @@ $(function (){
 
     //location
     if($("#location").length!==0){
+
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.fromTo(".banner-section",{y:0}, {
+      y: 0,
+      scrollTrigger: {
+        scrub: 0.1,
+        trigger: ".banner-section", //觸發得物件
+        start: "top top", // (物件開始位置, 卷軸開始位置) top center bottom px
+        toggleClass: "active"
+      }
+    });
+
+
+
       $("header .menu-wrapper .menu li").eq(2).addClass("active");
       let locationSection2Box2=new Swiper('#location .section-2 .swiper-box-2 .swiper', {
         loop:true,
@@ -235,7 +264,6 @@ $(function (){
 
   
     aosInit();
-    skrollr.init();
     /* ==========================================================================
 		[resize]
     ==========================================================================*/
